@@ -1,64 +1,66 @@
-# Portfolio
+# web-portfolio
 
-Portfolio pribadi single-page — React + Vite. Fokus: database, data, dan
-software development.
+My personal portfolio — a single-page site built with React and Vite.
+It covers who I am, what I've been working on, and how to reach me, with a
+focus on data, databases, and web development.
 
-> **Status: Stage 0 (scaffold).** Baru fondasi proyek yang terpasang (struktur
-> folder, token desain, font). Section dan navigasi dibangun bertahap pada
-> stage berikutnya.
+**Live:** _add your Vercel URL here after deploy_
 
-## Menjalankan secara lokal
+## Sections
 
-Butuh **Node.js 18+** (disarankan 20 atau 22).
+- **Hero** — intro and a link to my CV
+- **About** — short background and what I'm currently exploring
+- **Projects** — selected coursework and team projects, with a detail view for each
+- **Experience** — organizational and leadership roles
+- **Achievements & Certifications**
+- **Tools & Technologies**
+- **Contact** — email and social links
+
+## Tech stack
+
+- React 18
+- Vite
+- CSS Modules
+- Self-hosted fonts via `@fontsource` (Fraunces for headings, Inter for body)
+
+No UI framework or extra runtime dependencies — just React and plain CSS.
+
+## Running locally
+
+Requires Node.js 18+ (20 recommended).
 
 ```bash
-npm install   # pasang dependency
-npm run dev   # jalankan dev server (default: http://localhost:5173)
+npm install
+npm run dev      # http://localhost:5173
 ```
 
-Perintah lain:
+Other scripts:
 
 ```bash
-npm run build     # build produksi ke folder dist/
-npm run preview    # preview hasil build secara lokal
+npm run build    # production build into dist/
+npm run preview  # preview the production build locally
 ```
 
-> Catatan: proyek ini di-scaffold manual (tanpa `npm create vite`) dan belum
-> pernah di-install atau dijalankan di environment pembuatannya. Jalankan
-> perintah di atas pada komputermu untuk pertama kali.
-
-## Struktur folder
+## Project structure
 
 ```
-portfolio/
-├─ index.html              # HTML root, mount point #root
-├─ package.json            # dependency & script
-├─ vite.config.js          # konfigurasi Vite + plugin React
-├─ .gitignore
-└─ src/
-   ├─ main.jsx             # entry: import font + CSS global, render App
-   ├─ App.jsx              # root komponen (placeholder Stage 0)
-   ├─ data/                # (kosong) konten portfolio — diisi per section
-   ├─ hooks/               # (kosong) custom hooks
-   ├─ components/
-   │  ├─ layout/           # (kosong) Navbar, MobileMenu, Footer
-   │  ├─ ui/               # (kosong) Button, Modal, dll.
-   │  └─ sections/         # (kosong) Hero, About, Projects, dll.
-   └─ styles/
-      ├─ variables.css     # design tokens: warna, font, spacing, dll.
-      └─ global.css        # reset ringan + base style + reduced-motion
+src/
+├─ components/
+│  ├─ layout/      # Navbar, MobileMenu, Footer
+│  ├─ sections/    # Hero, About, Projects, Experience, Achievements, Tools, Contact
+│  └─ ui/          # shared pieces (modal, icons, image preview)
+├─ data/           # content as data (projects, experience, tools, etc.)
+├─ hooks/          # small custom hooks
+└─ styles/         # design tokens + global styles
+public/
+├─ files/cv.pdf    # downloadable/viewable CV
+├─ images/         # project screenshots and photos
+└─ logos/          # technology logos
 ```
 
-## Identitas visual
+Content lives in `src/data/`, so updating a project or adding a tool is just a
+data edit — no component changes needed.
 
-Palet (lihat `src/styles/variables.css`):
+## Deployment
 
-| Token            | Hex       | Peran                                    |
-| ---------------- | --------- | ---------------------------------------- |
-| Ivory            | `#F7F0E9` | background utama                         |
-| Dusty pink       | `#D8A6A1` | aksen interaktif terbatas (hover, fokus) |
-| Muted brown      | `#B58B72` | teks sekunder, border tipis              |
-| Deep cocoa       | `#49352F` | heading & body text                      |
-
-Font: **Fraunces** (heading) + **Inter** (body), di-bundle lokal via
-`@fontsource` (tanpa panggilan CDN).
+Deployed on Vercel. Pushing to `main` triggers an automatic redeploy.
