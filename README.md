@@ -2,7 +2,7 @@
 
 My personal portfolio, a single-page site built with React and Vite.
 
-**Live:** _add your Vercel URL here after deploy_
+**Live:** https://salzabilla-portfolio.vercel.app
 
 ## Sections
 
