@@ -1,0 +1,118 @@
+.experience {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.intro {
+  max-width: var(--measure);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  margin-top: var(--space-3);
+}
+
+.timeline {
+  margin-top: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding-left: var(--space-5);
+  border-left: 1px solid var(--border);
+  position: relative;
+}
+
+.entry::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0.35em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.period {
+  font-size: var(--fs-sm);
+  color: var(--accent-strong);
+  letter-spacing: 0.02em;
+}
+
+.role {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--text);
+}
+
+.organization {
+  margin-top: var(--space-1);
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+
+.points {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.point {
+  position: relative;
+  padding-left: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  line-height: var(--lh-snug);
+}
+
+.point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 1px;
+  background-color: var(--accent-strong);
+}
+
+@media (min-width: 641px) {
+  .entry {
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: var(--space-5);
+    padding-left: var(--space-6);
+  }
+
+  .period {
+    padding-top: 0.1em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .experience {
+    padding-block: var(--space-6);
+  }
+
+  .entry {
+    grid-template-columns: 12rem minmax(0, 1fr);
+  }
+}

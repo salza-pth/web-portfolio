@@ -1,0 +1,88 @@
+/*
+ * Design tokens — satu sumber kebenaran untuk warna, tipografi, spacing,
+ * dan breakpoint. Semua komponen mengacu ke variabel di sini supaya
+ * identitas visual tetap konsisten dan mudah disesuaikan.
+ */
+
+:root {
+  /* ---- Palet (disepakati) ---- */
+  --color-ivory: #f7f0e9; /* background utama */
+  --color-pink: #d8a6a1; /* aksen interaktif terbatas: hover, fokus, nav aktif */
+  --color-blush: #ead0cb; /* aksen lembut: tombol sekunder */
+  --color-brown: #b58b72; /* teks sekunder, label meta, border tipis */
+  --color-cocoa: #49352f; /* heading & body text */
+
+  /* Turunan netral (dipakai hemat, tetap dalam karakter hangat) */
+  --color-surface: #fffdfb; /* kartu/modal: putih hangat, bukan putih dingin */
+  --color-cocoa-80: rgba(73, 53, 47, 0.8); /* teks sedikit lebih lembut */
+  --color-cocoa-60: rgba(73, 53, 47, 0.6); /* teks meta/sekunder */
+  --color-hairline: rgba(181, 139, 114, 0.35); /* garis pembatas tipis (brown) */
+  --color-overlay: rgba(49, 36, 32, 0.45); /* dim overlay modal */
+
+  /* Peran semantik (dipakai komponen, bukan warna mentah) */
+  --bg: var(--color-ivory);
+  --surface: var(--color-surface);
+  --text: var(--color-cocoa);
+  --text-soft: var(--color-cocoa-80);
+  --text-muted: var(--color-cocoa-60);
+  --accent: var(--color-pink);
+  --accent-soft: var(--color-blush);
+  --accent-strong: var(--color-brown);
+  --border: var(--color-hairline);
+  --focus-ring: var(--color-pink);
+
+  /* Navbar gelap (cocoa) dengan teks ivory */
+  --nav-bg: var(--color-cocoa);
+  --nav-text: var(--color-ivory);
+  --nav-text-muted: rgba(247, 240, 233, 0.72);
+  --nav-border: rgba(247, 240, 233, 0.16);
+
+  /* ---- Tipografi ---- */
+  --font-heading: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+
+  /* Skala tipografi — dikalibrasi untuk keterbacaan, bukan efek.
+     Menggunakan clamp(min, preferred, max) agar mulus lintas viewport. */
+  --fs-xs: 0.8125rem; /* 13px — label meta */
+  --fs-sm: 0.9375rem; /* 15px — teks pendukung */
+  --fs-base: 1.0625rem; /* 17px — body */
+  --fs-md: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); /* subjudul */
+  --fs-lg: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); /* judul section */
+  --fs-xl: clamp(2rem, 1.5rem + 2.4vw, 3rem); /* heading hero (sedang, bukan raksasa) */
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ---- Spacing (skala konsisten; dipakai sesuai densitas konten) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Lebar baca & kontainer */
+  --measure: 65ch; /* lebar baca nyaman untuk prosa */
+  --container: 72rem; /* lebar maksimum konten */
+  --container-pad: clamp(1.25rem, 5vw, 3rem); /* padding tepi responsif */
+
+  /* ---- Detail ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --shadow-soft: 0 1px 2px rgba(73, 53, 47, 0.06),
+    0 8px 24px rgba(73, 53, 47, 0.06); /* halus, bukan tebal/glow */
+  --transition: 180ms ease;
+
+  /* Breakpoint — dicatat di sini sebagai acuan (media query ditulis manual):
+     mobile <= 640px, tablet 641-1024px, desktop > 1024px */
+}
